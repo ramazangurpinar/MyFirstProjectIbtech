@@ -2,6 +2,7 @@ package ramazan.gurpinar
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
 import ramazan.gurpinar.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -27,5 +28,11 @@ class MainActivity : AppCompatActivity() {
         landmarkList.add(eyfel)
         landmarkList.add(londonBridge)
         landmarkList.add(tajmahal)
+
+        // Recycler View
+
+        binding.landmarkRecyclerView.layoutManager = LinearLayoutManager(this)
+        val adapter = LandmarkAdapter(landmarkList)
+        binding.landmarkRecyclerView.adapter = adapter
     }
 }
